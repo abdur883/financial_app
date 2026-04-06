@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClearBooks Financial Services — Trusted Bookkeeping & GST Experts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0b1f3a;
+      --ink:    #132843;
+      --teal:   #0d7a72;
+      --gold:   #c8933a;
+      --cream:  #f8f4ee;
+      --white:  #ffffff;
+      --mist:   #e8f0f3;
+      --text:   #1e2d3d;
+      --sub:    #5a6d7e;
+      --border: #d0dde6;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      height: 72px;
+      background: rgba(11,31,58,0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(200,147,58,0.25);
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.02em;
+    }
+    .logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.82);
+      text-decoration: none; font-size: 0.9rem; font-weight: 500;
+      letter-spacing: 0.03em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold); color: var(--navy);
+      border: none; padding: 0.55rem 1.4rem;
+      border-radius: 4px; font-weight: 600; font-size: 0.85rem;
+      cursor: pointer; letter-spacing: 0.03em; text-transform: uppercase;
+      transition: background 0.2s, transform 0.15s;
+      text-decoration: none;
+    }
+    .nav-cta:hover { background: #daa84a; transform: translateY(-1px); }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      background: var(--navy);
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding: 120px 5% 80px;
+    }
+    .hero-grid-bg {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(13,122,114,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(13,122,114,0.07) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .hero-accent {
+      position: absolute; top: -120px; right: -80px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle at center, rgba(13,122,114,0.22) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-accent2 {
+      position: absolute; bottom: -100px; left: -60px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle at center, rgba(200,147,58,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; max-width: 680px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(200,147,58,0.15); border: 1px solid rgba(200,147,58,0.35);
+      color: var(--gold); font-size: 0.8rem; font-weight: 600;
+      padding: 0.35rem 1rem; border-radius: 100px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      margin-bottom: 1.8rem;
+      animation: fadeUp 0.6s ease both;
+    }
+    .hero-badge::before { content: '✦'; font-size: 0.6rem; }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      font-weight: 900; line-height: 1.08;
+      color: var(--white); margin-bottom: 1.4rem;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+    .hero-title em { color: var(--gold); font-style: normal; }
+    .hero-sub {
+      font-size: 1.1rem; line-height: 1.75;
+      color: rgba(255,255,255,0.68);
+      max-width: 520px; margin-bottom: 2.4rem;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+    .hero-actions {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+    .btn-primary {
+      background: var(--gold); color: var(--navy);
+      padding: 0.85rem 2rem; border-radius: 4px;
+      font-weight: 700; font-size: 0.95rem;
+      text-decoration: none; letter-spacing: 0.02em;
+      transition: background 0.2s, transform 0.15s;
+      border: none; cursor: pointer;
+    }
+    .btn-primary:hover { background: #daa84a; transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent; color: var(--white);
+      padding: 0.85rem 2rem; border-radius: 4px;
+      font-weight: 600; font-size: 0.95rem;
+      text-decoration: none; letter-spacing: 0.02em;
+      border: 1.5px solid rgba(255,255,255,0.35);
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .btn-outline:hover { border-color: var(--white); transform: translateY(-2px); }
+
+    .hero-stats {
+      position: absolute; right: 5%; bottom: 10%;
+      display: flex; gap: 2.5rem;
+      animation: fadeUp 0.6s 0.4s ease both;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem; font-weight: 700;
+      color: var(--gold); line-height: 1;
+    }
+    .stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 0.3rem; letter-spacing: 0.06em; text-transform: uppercase; }
+
+    /* ─── SECTION COMMON ─── */
+    section { padding: 100px 5%; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--teal);
+      margin-bottom: 0.8rem;
+    }
+    .section-label::before { content: ''; display: block; width: 28px; height: 2px; background: var(--teal); }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 700; line-height: 1.18;
+      color: var(--navy); margin-bottom: 1rem;
+    }
+    .section-sub { font-size: 1.05rem; color: var(--sub); line-height: 1.7; max-width: 560px; }
+
+    /* ─── WHY US ─── */
+    #why { background: var(--white); }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 60px; }
+    .why-visual {
+      background: var(--navy);
+      border-radius: 12px; padding: 48px 40px;
+      position: relative; overflow: hidden;
+    }
+    .why-visual::before {
+      content: '';
+      position: absolute; top: 0; right: 0; bottom: 0;
+      width: 50%;
+      background: linear-gradient(135deg, rgba(13,122,114,0.2), transparent);
+    }
+    .why-item {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+    }
+    .why-item:last-child { border-bottom: none; }
+    .why-icon {
+      width: 42px; height: 42px; flex-shrink: 0;
+      background: rgba(200,147,58,0.15); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+    .why-item-title { font-weight: 600; color: var(--white); font-size: 0.95rem; margin-bottom: 0.25rem; }
+    .why-item-desc { font-size: 0.85rem; color: rgba(255,255,255,0.55); line-height: 1.55; }
+
+    .why-points { display: flex; flex-direction: column; gap: 1.8rem; }
+    .point {
+      display: flex; gap: 1.2rem; align-items: flex-start;
+      padding: 1.5rem; border-radius: 8px;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .point:hover { border-color: var(--teal); box-shadow: 0 4px 20px rgba(13,122,114,0.08); }
+    .point-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; font-weight: 700;
+      color: rgba(13,122,114,0.25); line-height: 1;
+      flex-shrink: 0;
+    }
+    .point-title { font-weight: 600; font-size: 1rem; color: var(--navy); margin-bottom: 0.3rem; }
+    .point-desc { font-size: 0.9rem; color: var(--sub); line-height: 1.6; }
+
+    /* ─── SERVICES ─── */
+    #services { background: var(--cream); }
+    .services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 56px; flex-wrap: wrap; gap: 1rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px; padding: 36px 28px;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      position: relative; overflow: hidden;
+    }
+    .service-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px; background: var(--teal);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(11,31,58,0.1); border-color: transparent; }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-icon {
+      width: 56px; height: 56px;
+      background: var(--mist); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; margin-bottom: 1.4rem;
+    }
+    .service-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 0.7rem; }
+    .service-desc { font-size: 0.9rem; color: var(--sub); line-height: 1.7; margin-bottom: 1.2rem; }
+    .service-list { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
+    .service-list li { font-size: 0.85rem; color: var(--text); display: flex; align-items: center; gap: 0.5rem; }
+    .service-list li::before { content: '✓'; color: var(--teal); font-weight: 700; font-size: 0.8rem; flex-shrink: 0; }
+
+    /* ─── HOW IT WORKS ─── */
+    #how { background: var(--navy); }
+    #how .section-title { color: var(--white); }
+    #how .section-sub { color: rgba(255,255,255,0.55); }
+    #how .section-label { color: var(--gold); }
+    #how .section-label::before { background: var(--gold); }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 60px; }
+    .step {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 40px 28px;
+      position: relative; transition: background 0.2s;
+    }
+    .step:first-child { border-radius: 10px 0 0 10px; }
+    .step:last-child { border-radius: 0 10px 10px 0; }
+    .step:hover { background: rgba(255,255,255,0.07); }
+    .step-arrow {
+      position: absolute; right: -14px; top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold); font-size: 1.4rem; z-index: 2;
+    }
+    .step:last-child .step-arrow { display: none; }
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem; font-weight: 900;
+      color: rgba(200,147,58,0.2); line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .step-title { font-weight: 600; color: var(--white); font-size: 1rem; margin-bottom: 0.6rem; }
+    .step-desc { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.65; }
+
+    /* ─── RECORDS ─── */
+    #records { background: var(--white); }
+    .records-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-top: 60px; }
+    .record-list { display: flex; flex-direction: column; gap: 1rem; }
+    .record-item {
+      display: flex; gap: 1rem; align-items: flex-start;
+      padding: 1.2rem 1.4rem;
+      background: var(--cream); border-radius: 8px;
+      border-left: 3px solid var(--teal);
+      transition: transform 0.2s;
+    }
+    .record-item:hover { transform: translateX(4px); }
+    .record-emoji { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+    .record-name { font-weight: 600; font-size: 0.95rem; color: var(--navy); }
+    .record-desc { font-size: 0.83rem; color: var(--sub); margin-top: 0.2rem; line-height: 1.5; }
+    .records-info { }
+    .info-box {
+      background: var(--navy); border-radius: 10px;
+      padding: 36px; margin-bottom: 1.5rem;
+    }
+    .info-box-title { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.3rem; font-weight: 700; margin-bottom: 0.7rem; }
+    .info-box-text { color: rgba(255,255,255,0.65); font-size: 0.92rem; line-height: 1.75; }
+    .info-note {
+      background: rgba(13,122,114,0.08); border: 1px solid rgba(13,122,114,0.25);
+      border-radius: 8px; padding: 1.2rem 1.4rem;
+      font-size: 0.88rem; color: var(--teal); line-height: 1.65;
+    }
+    .info-note strong { font-weight: 700; }
+
+    /* ─── TAX ─── */
+    #tax { background: var(--cream); }
+    .tax-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-top: 60px; }
+    .tax-card {
+      border: 1px solid var(--border); border-radius: 10px;
+      padding: 32px; background: var(--white);
+      display: flex; gap: 1.2rem;
+      transition: box-shadow 0.2s;
+    }
+    .tax-card:hover { box-shadow: 0 8px 28px rgba(11,31,58,0.08); }
+    .tax-badge {
+      width: 48px; height: 48px; flex-shrink: 0;
+      background: var(--navy); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); font-weight: 800; font-size: 0.8rem;
+      letter-spacing: 0.04em;
+    }
+    .tax-title { font-weight: 700; font-size: 1rem; color: var(--navy); margin-bottom: 0.5rem; }
+    .tax-desc { font-size: 0.88rem; color: var(--sub); line-height: 1.65; }
+
+    /* ─── TESTIMONIALS ─── */
+    #testimonials { background: var(--navy); }
+    #testimonials .section-title { color: var(--white); }
+    #testimonials .section-label { color: var(--gold); }
+    #testimonials .section-label::before { background: var(--gold); }
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
+    .testi-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px; padding: 32px 28px;
+    }
+    .testi-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 1rem; letter-spacing: 2px; }
+    .testi-text { font-size: 0.92rem; color: rgba(255,255,255,0.72); line-height: 1.75; margin-bottom: 1.4rem; font-style: italic; }
+    .testi-author { display: flex; align-items: center; gap: 0.8rem; }
+    .testi-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal), var(--gold));
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-weight: 700; font-size: 0.9rem;
+    }
+    .testi-name { font-weight: 600; color: var(--white); font-size: 0.9rem; }
+    .testi-role { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+
+    /* ─── FAQ ─── */
+    #faq { background: var(--white); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-top: 60px; }
+    .faq-list { display: flex; flex-direction: column; gap: 1px; }
+    .faq-item { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 8px; }
+    .faq-q {
+      width: 100%; display: flex; justify-content: space-between; align-items: center;
+      padding: 1.1rem 1.4rem; background: none; border: none;
+      font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--navy); cursor: pointer; text-align: left;
+      transition: background 0.2s;
+    }
+    .faq-q:hover { background: var(--cream); }
+    .faq-q .faq-arrow { font-size: 0.7rem; color: var(--teal); transition: transform 0.2s; }
+    .faq-a {
+      font-size: 0.9rem; color: var(--sub); line-height: 1.72;
+      padding: 0 1.4rem;
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s;
+    }
+    .faq-item.open .faq-a { max-height: 300px; padding: 0 1.4rem 1.2rem; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-cta-box {
+      background: var(--navy); border-radius: 12px; padding: 48px 36px;
+      text-align: center;
+    }
+    .faq-cta-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--white); font-weight: 700; margin-bottom: 0.8rem; }
+    .faq-cta-sub { font-size: 0.92rem; color: rgba(255,255,255,0.6); line-height: 1.65; margin-bottom: 2rem; }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--cream); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; margin-top: 60px; }
+    .contact-info h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--navy); font-weight: 700; margin-bottom: 1.2rem; }
+    .contact-info p { font-size: 0.92rem; color: var(--sub); line-height: 1.75; margin-bottom: 2rem; }
+    .contact-detail { display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; color: var(--text); }
+    .contact-detail span:first-child { font-size: 1.1rem; }
+    .contact-form { background: var(--white); border-radius: 12px; padding: 44px 40px; border: 1px solid var(--border); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--text); margin-bottom: 0.45rem; letter-spacing: 0.03em; text-transform: uppercase; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 0.75rem 1rem;
+      border: 1.5px solid var(--border); border-radius: 6px;
+      font-family: 'DM Sans', sans-serif; font-size: 0.92rem; color: var(--text);
+      background: var(--cream); transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--teal); background: var(--white); }
+    .form-group textarea { height: 110px; resize: none; }
+    .form-submit { width: 100%; padding: 1rem; background: var(--navy); color: var(--white); border: none; border-radius: 6px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.2s; }
+    .form-submit:hover { background: var(--ink); }
+    .form-success { display: none; text-align: center; padding: 2rem; }
+    .form-success h4 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--teal); margin-bottom: 0.5rem; }
+    .form-success p { color: var(--sub); font-size: 0.9rem; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--navy);
+      border-top: 1px solid rgba(200,147,58,0.2);
+      padding: 60px 5% 32px;
+    }
+    .footer-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+    .footer-brand .logo { display: block; margin-bottom: 1rem; }
+    .footer-brand p { font-size: 0.87rem; color: rgba(255,255,255,0.45); line-height: 1.7; max-width: 280px; }
+    .footer-col h4 { color: var(--white); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.2rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+    .footer-col ul li a { font-size: 0.87rem; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-bottom p { font-size: 0.82rem; color: rgba(255,255,255,0.3); }
+    .footer-legal { display: flex; gap: 1.5rem; }
+    .footer-legal a { font-size: 0.82rem; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+    .footer-legal a:hover { color: rgba(255,255,255,0.6); }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── FLOATING CHAT BUTTON ─── */
+    .chat-btn {
+      position: fixed; bottom: 28px; right: 28px; z-index: 200;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--teal); color: white; border: none;
+      font-size: 1.4rem; cursor: pointer;
+      box-shadow: 0 4px 20px rgba(13,122,114,0.4);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .chat-btn:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(13,122,114,0.55); }
+    .chat-tooltip {
+      position: fixed; bottom: 94px; right: 28px; z-index: 200;
+      background: var(--navy); color: white;
+      padding: 0.5rem 1rem; border-radius: 6px;
+      font-size: 0.82rem; font-weight: 500;
+      pointer-events: none; opacity: 0; transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+    .chat-btn:hover + .chat-tooltip { opacity: 1; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .step:nth-child(2) { border-radius: 0 10px 0 0; }
+      .step:nth-child(3) { border-radius: 0 0 0 10px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 4%; }
+      .nav-links { display: none; }
+      .hero-stats { position: static; margin-top: 3rem; justify-content: flex-start; }
+      .why-grid, .records-grid, .tax-grid, .faq-grid, .contact-grid { grid-template-columns: 1fr; }
+      .services-grid, .steps, .testi-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Clear<span>Books</span> Financial</div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#records">Records</a></li>
+    <li><a href="#tax">Tax & GST</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get a Free Consult</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-accent2"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Professional Bookkeeping &amp; GST Services</div>
+    <h1 class="hero-title">Your Books, <em>Clean.</em><br/>Your Taxes, <em>Right.</em></h1>
+    <p class="hero-sub">We handle your bookkeeping, GST filing, financial statements, and account tracking — so you can run your business without worry. No double entries, no missed deadlines, no surprises.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Get Free Consultation</a>
+      <a href="#services" class="btn-outline">See Our Services</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Happy Clients</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Compliant Filing</div></div>
+    <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Years Experience</div></div>
+    <div class="stat"><div class="stat-num">0</div><div class="stat-label">Missed Deadlines</div></div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="why-grid">
+    <div class="fade-up">
+      <div class="section-label">Why Choose Us</div>
+      <h2 class="section-title">We Make Finance Simple — For Everyone</h2>
+      <p class="section-sub">Whether you're a shop owner, freelancer, or startup — you don't need to know accounting. That's our job. We keep your records clean, up to date, and legally compliant at all times.</p>
+      <div class="why-points" style="margin-top:2rem;">
+        <div class="point">
+          <div class="point-num">01</div>
+          <div>
+            <div class="point-title">No Accounting Knowledge Required</div>
+            <div class="point-desc">We explain everything in plain language. You'll always know the health of your business without needing a finance degree.</div>
+          </div>
+        </div>
+        <div class="point">
+          <div class="point-num">02</div>
+          <div>
+            <div class="point-title">Avoid Costly Double Taxation</div>
+            <div class="point-desc">Our experts identify every legitimate deduction and ensure you never pay tax twice on the same income.</div>
+          </div>
+        </div>
+        <div class="point">
+          <div class="point-num">03</div>
+          <div>
+            <div class="point-title">Always Up-to-Date Records</div>
+            <div class="point-desc">We reconcile your accounts regularly so your financial picture is never stale or inaccurate.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-visual fade-up">
+      <div class="why-item">
+        <div class="why-icon">📊</div>
+        <div>
+          <div class="why-item-title">Real-Time Financial Dashboard</div>
+          <div class="why-item-desc">See your income, expenses, and profit/loss at a glance — always current.</div>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🔒</div>
+        <div>
+          <div class="why-item-title">Secure Record Storage</div>
+          <div class="why-item-desc">Your data is backed up and protected. Access your records anytime, safely.</div>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">📅</div>
+        <div>
+          <div class="why-item-title">Deadline Reminders & GST Alerts</div>
+          <div class="why-item-desc">Never miss a filing deadline again. We track every due date for you.</div>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🧾</div>
+        <div>
+          <div class="why-item-title">Clear, Readable Statements</div>
+          <div class="why-item-desc">Professional financial statements that you and your bank can actually understand.</div>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🤝</div>
+        <div>
+          <div class="why-item-title">Dedicated Account Manager</div>
+          <div class="why-item-desc">One point of contact who knows your business inside out.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Complete Financial Services</h2>
+    </div>
+    <p style="max-width:340px;color:var(--sub);font-size:0.92rem;line-height:1.65;">From day-to-day bookkeeping to full GST filing — everything under one roof, handled by certified professionals.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card fade-up">
+      <div class="service-icon">📒</div>
+      <div class="service-title">Bookkeeping</div>
+      <div class="service-desc">Daily, weekly, or monthly recording of every financial transaction in your business — done accurately and on time.</div>
+      <ul class="service-list">
+        <li>Recording income &amp; expenses</li>
+        <li>Bank reconciliation</li>
+        <li>Accounts payable &amp; receivable</li>
+        <li>Payroll tracking</li>
+        <li>Petty cash management</li>
+      </ul>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">🧾</div>
+      <div class="service-title">GST Filing</div>
+      <div class="service-desc">Accurate, on-time GST returns so you never face penalties. We ensure full compliance with the latest regulations.</div>
+      <ul class="service-list">
+        <li>GST registration assistance</li>
+        <li>Monthly / quarterly returns</li>
+        <li>Input tax credit claims</li>
+        <li>GST reconciliation</li>
+        <li>Audit support</li>
+      </ul>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">📈</div>
+      <div class="service-title">Financial Statements</div>
+      <div class="service-desc">Clear, professional statements that show exactly where your business stands — ready for banks, investors, or your own decisions.</div>
+      <ul class="service-list">
+        <li>Profit &amp; Loss statement</li>
+        <li>Balance sheet</li>
+        <li>Cash flow statement</li>
+        <li>Statement of changes in equity</li>
+        <li>Notes to accounts</li>
+      </ul>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">💼</div>
+      <div class="service-title">Tax Planning & Compliance</div>
+      <div class="service-desc">We identify legitimate ways to reduce your tax burden — and make sure you never pay more than you owe.</div>
+      <ul class="service-list">
+        <li>Income tax return filing</li>
+        <li>Advance tax calculation</li>
+        <li>Deduction maximization</li>
+        <li>Avoiding double taxation</li>
+        <li>TDS compliance</li>
+      </ul>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">🔍</div>
+      <div class="service-title">Account Reconciliation</div>
+      <div class="service-desc">We match every transaction with your bank and vendor statements so your books are always 100% accurate.</div>
+      <ul class="service-list">
+        <li>Bank statement matching</li>
+        <li>Vendor account reconciliation</li>
+        <li>Customer account reconciliation</li>
+        <li>Error detection &amp; correction</li>
+        <li>Monthly closing entries</li>
+      </ul>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">📊</div>
+      <div class="service-title">MIS Reports &amp; Analytics</div>
+      <div class="service-desc">Custom management reports that help you make smart business decisions — even if you're not a numbers person.</div>
+      <ul class="service-list">
+        <li>Monthly performance summary</li>
+        <li>Expense category analysis</li>
+        <li>Budget vs actual reports</li>
+        <li>Trend analysis</li>
+        <li>Custom dashboard reports</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="section-label">The Process</div>
+  <h2 class="section-title">How We Work — Simple as 1, 2, 3, 4</h2>
+  <p class="section-sub">From first contact to ongoing support — here's exactly how we keep your books clean and your taxes right.</p>
+  <div class="steps">
+    <div class="step fade-up">
+      <div class="step-num">01</div>
+      <div class="step-title">Free Consultation</div>
+      <div class="step-desc">Tell us about your business. We assess your current financial situation, understand your needs, and recommend the right package — at no cost.</div>
+      <div class="step-arrow">›</div>
+    </div>
+    <div class="step fade-up">
+      <div class="step-num">02</div>
+      <div class="step-title">Data Collection</div>
+      <div class="step-desc">Share your invoices, bank statements, and receipts — digitally or physically. We organise everything into a clean, structured system.</div>
+      <div class="step-arrow">›</div>
+    </div>
+    <div class="step fade-up">
+      <div class="step-num">03</div>
+      <div class="step-title">Processing &amp; Filing</div>
+      <div class="step-desc">We record all transactions, reconcile accounts, prepare financial statements, and file GST returns accurately and on time.</div>
+      <div class="step-arrow">›</div>
+    </div>
+    <div class="step fade-up">
+      <div class="step-num">04</div>
+      <div class="step-title">Review &amp; Ongoing Support</div>
+      <div class="step-desc">You receive clear reports and summaries. We stay on as your ongoing financial partner — always available to answer questions.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINANCIAL RECORDS -->
+<section id="records">
+  <div class="records-grid">
+    <div class="fade-up">
+      <div class="section-label">What We Track</div>
+      <h2 class="section-title">Every Record You Need — Organised &amp; Safe</h2>
+      <p class="section-sub" style="margin-bottom:2rem;">We maintain complete, up-to-date records of every financial aspect of your business. Here's what we keep on file for you:</p>
+      <div class="record-list">
+        <div class="record-item">
+          <div class="record-emoji">💰</div>
+          <div>
+            <div class="record-name">Income &amp; Revenue Records</div>
+            <div class="record-desc">All sales, service income, and other revenue — organised by date and category.</div>
+          </div>
+        </div>
+        <div class="record-item">
+          <div class="record-emoji">🧾</div>
+          <div>
+            <div class="record-name">Expense Receipts &amp; Bills</div>
+            <div class="record-desc">Every purchase and business expense, categorised and linked to bank transactions.</div>
+          </div>
+        </div>
+        <div class="record-item">
+          <div class="record-emoji">🏦</div>
+          <div>
+            <div class="record-name">Bank &amp; Cash Records</div>
+            <div class="record-desc">Reconciled bank statements and petty cash records — always balanced to the last rupee.</div>
+          </div>
+        </div>
+        <div class="record-item">
+          <div class="record-emoji">👥</div>
+          <div>
+            <div class="record-name">Payroll &amp; Salary Records</div>
+            <div class="record-desc">Employee payments, PF, ESI, and TDS deductions — fully documented.</div>
+          </div>
+        </div>
+        <div class="record-item">
+          <div class="record-emoji">📦</div>
+          <div>
+            <div class="record-name">Asset &amp; Liability Registers</div>
+            <div class="record-desc">Fixed assets, loans, and liabilities tracked with depreciation schedules.</div>
+          </div>
+        </div>
+        <div class="record-item">
+          <div class="record-emoji">📋</div>
+          <div>
+            <div class="record-name">GST Input/Output Records</div>
+            <div class="record-desc">All GST collected and paid, ready for accurate return filing every period.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="records-info fade-up">
+      <div class="info-box">
+        <div class="info-box-title">Why Up-to-Date Records Matter</div>
+        <div class="info-box-text">
+          Accurate, current financial records protect you in three critical ways:
+          <br/><br/>
+          <strong style="color:var(--gold)">1. Tax Audits</strong> — If the tax authority ever audits your business, clean, well-organised records are your best defense. Missing or inaccurate records can result in heavy penalties.
+          <br/><br/>
+          <strong style="color:var(--gold)">2. Business Loans</strong> — Banks and lenders require up-to-date financial statements before approving any loan or credit line.
+          <br/><br/>
+          <strong style="color:var(--gold)">3. Smart Decisions</strong> — You can't grow what you can't measure. Real-time records let you see what's working and what needs to change.
+        </div>
+      </div>
+      <div class="info-note">
+        <strong>📌 Did you know?</strong> Businesses that maintain proper monthly bookkeeping are 3× more likely to be loan-approved and pay significantly less in taxes due to proper deduction tracking.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TAX & GST EDUCATION -->
+<section id="tax">
+  <div class="section-label">Tax &amp; GST Guide</div>
+  <h2 class="section-title">Understanding Your Tax Obligations</h2>
+  <p class="section-sub">Even if you're new to business finance, here's what you need to know — in plain language.</p>
+  <div class="tax-grid">
+    <div class="tax-card fade-up">
+      <div class="tax-badge">GST</div>
+      <div>
+        <div class="tax-title">What is GST and Who Needs to File It?</div>
+        <div class="tax-desc">Goods and Services Tax (GST) is a unified indirect tax on supply of goods and services. Any business with an annual turnover above the threshold must register and file GST returns regularly. We handle your entire GST compliance from registration to monthly/quarterly filings.</div>
+      </div>
+    </div>
+    <div class="tax-card fade-up">
+      <div class="tax-badge" style="font-size:0.7rem;">ITC</div>
+      <div>
+        <div class="tax-title">Input Tax Credit — Don't Leave Money on the Table</div>
+        <div class="tax-desc">When you pay GST on your purchases, you can claim that amount back against your outgoing GST. This is called Input Tax Credit (ITC). Many businesses miss out on thousands in refunds because their records aren't in order. We ensure every eligible credit is claimed.</div>
+      </div>
+    </div>
+    <div class="tax-card fade-up">
+      <div class="tax-badge" style="font-size:0.7rem;">TDS</div>
+      <div>
+        <div class="tax-title">TDS — Tax Deducted at Source</div>
+        <div class="tax-desc">If your business makes payments above certain thresholds (rent, contractor fees, professional charges), you're required to deduct TDS and deposit it with the government. Failure to do so attracts interest and penalties. We track every TDS liability and ensure timely deposits.</div>
+      </div>
+    </div>
+    <div class="tax-card fade-up">
+      <div class="tax-badge" style="font-size:0.7rem;">DBL</div>
+      <div>
+        <div class="tax-title">Avoiding Double Taxation</div>
+        <div class="tax-desc">Double taxation occurs when the same income is taxed more than once — either at the business and personal level, or across multiple jurisdictions. We structure your accounts correctly and apply appropriate tax treaties and exemptions so you never pay more than legally required.</div>
+      </div>
+    </div>
+    <div class="tax-card fade-up">
+      <div class="tax-badge" style="font-size:0.65rem;">P&amp;L</div>
+      <div>
+        <div class="tax-title">Reading Your Profit &amp; Loss Statement</div>
+        <div class="tax-desc">Your P&amp;L shows Revenue − Expenses = Net Profit (or Loss). It answers: Is my business making money? Which costs are too high? Can I afford to expand? We create your P&amp;L every month and walk you through what it means in simple terms.</div>
+      </div>
+    </div>
+    <div class="tax-card fade-up">
+      <div class="tax-badge" style="font-size:0.65rem;">B/S</div>
+      <div>
+        <div class="tax-title">Understanding Your Balance Sheet</div>
+        <div class="tax-desc">A balance sheet shows what your business owns (assets) vs what it owes (liabilities). The difference is your net worth. It's essential for loan applications and shows investors and banks the financial strength of your business at a specific point in time.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div style="text-align:center;margin-bottom:0;">
+    <div class="section-label" style="justify-content:center;">Client Stories</div>
+    <h2 class="section-title" style="text-align:center;margin:0 auto 0.5rem;">What Our Clients Say</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card fade-up">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">"Before ClearBooks, I had no idea where my money was going. Now I get a clean report every month and my GST is always filed on time. I've saved more on taxes this year than ever before."</div>
+      <div class="testi-author">
+        <div class="testi-avatar">RS</div>
+        <div>
+          <div class="testi-name">Rajan Sharma</div>
+          <div class="testi-role">Owner, Sharma Electronics</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card fade-up">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">"I was so confused about GST input credits. Turns out I had been overpaying for two years! ClearBooks recovered a significant amount and now keeps everything perfectly organised."</div>
+      <div class="testi-author">
+        <div class="testi-avatar">PM</div>
+        <div>
+          <div class="testi-name">Priya Mehta</div>
+          <div class="testi-role">Freelance Consultant</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card fade-up">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">"My bank approved my business loan within days because our financial statements were so clean and professional. The team explains everything clearly — no jargon, just results."</div>
+      <div class="testi-author">
+        <div class="testi-avatar">AK</div>
+        <div>
+          <div class="testi-name">Arjun Kapoor</div>
+          <div class="testi-role">Director, AK Logistics</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="faq-grid">
+    <div class="fade-up">
+      <div class="section-label">Common Questions</div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-sub" style="margin-bottom:2rem;">New to bookkeeping? Don't worry — here are answers to the questions our new clients ask most.</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Do I need to know accounting to use your services? <span class="faq-arrow">▼</span></button>
+          <div class="faq-a">Absolutely not. That's exactly why we exist. You run your business — we handle the numbers. We'll explain everything in plain, simple language whenever you need us to.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">How do I send you my documents? <span class="faq-arrow">▼</span></button>
+          <div class="faq-a">You can share invoices, receipts, and bank statements via WhatsApp, email, Google Drive, or any cloud storage. We also accept physical documents that we'll scan and digitise for you.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">What if my books are already messy or behind? <span class="faq-arrow">▼</span></button>
+          <div class="faq-a">No problem at all. We specialise in cleaning up backlogged and messy books. We'll catch up all prior periods, fix errors, and bring everything current — no judgment, just solutions.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">How often will I get reports? <span class="faq-arrow">▼</span></button>
+          <div class="faq-a">We provide monthly financial reports as standard. You can also request weekly summaries or custom reports whenever needed. You'll always know how your business is performing.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Is my financial data safe with you? <span class="faq-arrow">▼</span></button>
+          <div class="faq-a">Yes. All client data is stored securely with encrypted backups. We operate under strict confidentiality agreements and never share your information with any third party without your consent.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Can you help if I get a GST audit or tax notice? <span class="faq-arrow">▼</span></button>
+          <div class="faq-a">Absolutely. We provide full audit support — preparing all required documentation, attending hearings alongside you if needed, and responding to notices on your behalf. Our clean record-keeping means audits are rarely a problem.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">How is pricing determined? <span class="faq-arrow">▼</span></button>
+          <div class="faq-a">Pricing is based on the size of your business, transaction volume, and services required. Contact us for a free consultation and we'll give you a transparent, fixed monthly quote with no hidden charges.</div>
+        </div>
+      </div>
+    </div>
+    <div class="fade-up">
+      <div class="faq-cta-box">
+        <div class="faq-cta-title">Still Have Questions?</div>
+        <div class="faq-cta-sub">Every business is different. Book a free 30-minute consultation and get personalised answers from our expert team — with no obligation or sales pressure.</div>
+        <a href="#contact" class="btn-primary" style="display:inline-block;">Book Free Call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Get In Touch</div>
+  <h2 class="section-title">Start With a Free Consultation</h2>
+  <div class="contact-grid">
+    <div class="contact-info fade-up">
+      <h3>We'd love to help your business</h3>
+      <p>Fill out the form and we'll get back to you within 24 hours. No commitments — just a friendly conversation to understand your needs and how we can help.</p>
+      <div class="contact-detail"><span>📍</span><span>123 Finance Street, Business District</span></div>
+      <div class="contact-detail"><span>📞</span><span>+91 98765 43210</span></div>
+      <div class="contact-detail"><span>✉️</span><span>hello@clearbooks.financial</span></div>
+      <div class="contact-detail"><span>⏰</span><span>Mon–Sat, 9am – 6pm</span></div>
+      <div class="contact-detail"><span>💬</span><span>WhatsApp: +91 98765 43210</span></div>
+    </div>
+    <div class="contact-form fade-up" id="contactForm">
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" placeholder="Your name" /></div>
+        <div class="form-group"><label>Last Name</label><input type="text" placeholder="Last name" /></div>
+      </div>
+      <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com" /></div>
+      <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+91 00000 00000" /></div>
+      <div class="form-group">
+        <label>Service Interested In</label>
+        <select>
+          <option value="">Select a service...</option>
+          <option>Bookkeeping</option>
+          <option>GST Filing</option>
+          <option>Financial Statements</option>
+          <option>Tax Planning</option>
+          <option>Account Reconciliation</option>
+          <option>Full Package</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Tell us about your business</label><textarea placeholder="e.g. I run a small retail shop, 50 transactions/month, need GST help..."></textarea></div>
+      <button class="form-submit" onclick="submitForm()">Send Message — It's Free</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">Clear<span>Books</span> Financial</div>
+      <p>Professional bookkeeping, GST filing, and financial management services for businesses of all sizes. Accurate. Compliant. Transparent.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Bookkeeping</a></li>
+        <li><a href="#services">GST Filing</a></li>
+        <li><a href="#services">Financial Statements</a></li>
+        <li><a href="#services">Tax Planning</a></li>
+        <li><a href="#services">MIS Reports</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#why">About Us</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#testimonials">Client Stories</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#tax">GST Guide</a></li>
+        <li><a href="#records">Record Keeping</a></li>
+        <li><a href="#tax">Tax Basics</a></li>
+        <li><a href="#contact">Free Consultation</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 ClearBooks Financial Services. All rights reserved.</p>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Disclaimer</a>
+    </div>
+  </div>
+</footer>
+
+<!-- CHAT BUTTON -->
+<button class="chat-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">💬</button>
+<div class="chat-tooltip">Chat with us</div>
+
+<script>
+  // FAQ Toggle
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Form Submit
+  function submitForm() {
+    const form = document.getElementById('contactForm');
+    form.innerHTML = `
+      <div class="form-success" style="display:block;">
+        <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
+        <h4>Message Sent!</h4>
+        <p>Thank you for reaching out. Our team will contact you within 24 hours to schedule your free consultation.</p>
+      </div>
+    `;
+  }
+
+  // Scroll Animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
